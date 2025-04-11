@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Superhero Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        img {
+            height: 100px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Superheroes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Alias</th>
+                <th>Image</th>
+                <th>Superpower</th>
+                <th>Weakness</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter Parker</td>
+                <td>Spider-Man</td>
+                <td>
+                    <a href="https://image.tmdb.org/t/p/original/3csIdytRnmRNh1EjHD9Nrej3L2H.jpg" target="_blank">
+                        <img src="https://image.tmdb.org/t/p/original/3csIdytRnmRNh1EjHD9Nrej3L2H.jpg" alt="Spider-Man">
+                    </a>
+                </td>
+                <td>Wall-Crawling, Spider sense, Super Agility</td>
+                <td>Guilt, Emotional Vulnerability</td>
+            </tr>
+            <tr>
+                <td>Barry Allen</td>
+                <td>The Flash</td>
+                <td>
+                    <a href="https://images2.alphacoders.com/790/thumb-1920-790107.jpg" target="_blank">
+                        <img src="https://images2.alphacoders.com/790/thumb-1920-790107.jpg" alt="The Flash">
+                    </a>
+                </td>
+                <td>Super Speed, Time Travel, Accelerated Healing</td>
+                <td>Needs High Energy Intake, Impulsive Decisions</td>
+            </tr>
+            <tr>
+                <td>Bruce Wayne</td>
+                <td>Batman</td>
+                <td>
+                    <a href="https://wallpapercave.com/wp/XXwI304.jpg" target="_blank">
+                        <img src="https://wallpapercave.com/wp/XXwI304.jpg" alt="Batman">
+                    </a>
+                </td>
+                <td>Peak Human intellect, Combat Skills, Technology</td>
+                <td>Human Limitations, Emotional Trauma</td>
+            </tr>
+            <tr>
+                <td>Eddie Brock</td>
+                <td>Venom</td>
+                <td>
+                    <a href="https://www.looper.com/img/gallery/venom-3-release-date-cast-and-plot-what-we-know-so-far/l-intro-1635129031.jpg" target="_blank">
+                        <img src="https://www.looper.com/img/gallery/venom-3-release-date-cast-and-plot-what-we-know-so-far/l-intro-1635129031.jpg" alt="Venom">
+                    </a>
+                </td>
+                <td>Shape-Shifting, Strength, Symbiote Abilities</td>
+                <td>Sound and Fire</td>
+            </tr>
+            <tr>
+                <td>Tony Stark</td>
+                <td>Iron Man</td>
+                <td>
+                    <a href="https://www.wallpapersshare.com/img/big/robert-downey-jr-as-iron-man-movie-wallpaper.jpg" target="_blank">
+                        <img src="https://www.wallpapersshare.com/img/big/robert-downey-jr-as-iron-man-movie-wallpaper.jpg" alt="Iron Man">
+                    </a>
+                </td>
+                <td>Powered Armor Suit, Genius-level Intellect</td>
+                <td>Arc Reactor Dependency, Arrogance</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
