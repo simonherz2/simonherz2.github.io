@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <title>Play Snake Game</title>
     <link rel="stylesheet" href="css/application.css">
+    <style>
+        /* Quick inline styles if not already in your CSS */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-row img {
+            width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Snake Game Arcade</h1>
@@ -14,13 +36,17 @@
     <h2>How to Play</h2>
     <p>Use the arrow keys on your keyboard to control the snake. Eat the green dots to grow longer. Avoid hitting the walls or your own tail!</p>
 
-    <!-- Embedded Web App -->
-    <iframe src="https://www.minijuegos.com/embed/snake" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+    <!-- Centered Embedded Game -->
+    <div class="center">
+        <iframe src="https://www.minijuegos.com/embed/snake" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-    <!-- Instructional Visuals -->
-    <img src="ButtonControls.png" alt="Snake Game Controls" width="300">
-    <img src="Scoring.png" alt="Scoreboard Example" width="300">
-    <img src="GameOver.png" alt="Game Over Screen" width="300">
+    <!-- Images in a Row -->
+    <div class="image-row">
+        <img src="ButtonControls.png" alt="Snake Game Controls">
+        <img src="Scoring.png" alt="Scoreboard Example">
+        <img src="GameOver.png" alt="Game Over Screen">
+    </div>
 
     <h2>Tips for Success</h2>
     <ul>
@@ -54,3 +80,4 @@
     </table>
 </body>
 </html>
+
