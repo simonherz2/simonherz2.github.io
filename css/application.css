@@ -1,0 +1,58 @@
+/* Import custom fonts */
+@font-face {
+    font-family: 'HeadingFont';
+    src: url('fonts/HeadingFont.ttf');
+}
+
+@font-face {
+    font-family: 'BodyFont';
+    src: url('fonts/BodyFont.ttf');
+}
+
+/* General Styles */
+body {
+    font-family: 'BodyFont', sans-serif;
+    background-color: #e6f9ff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'HeadingFont', serif;
+    color: #006699;
+}
+
+/* Images */
+img {
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Table Styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 60%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
+th {
+    background-color: #0099cc;
+    color: white;
+}
+
+/* List Styling */
+ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+}
