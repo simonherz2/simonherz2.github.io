@@ -1,17 +1,13 @@
-@font-face {
-  font-family: 'HeadingFont';
-  src: url('fonts/YourHeadingFont.ttf');
-}
-
-@font-face {
-  font-family: 'BodyFont';
-  src: url('fonts/YourBodyFont.ttf');
-}
-
 body {
-  font-family: 'BodyFont';
+    font-family: 'Lato', sans-serif;
+    background-color: #e6f9ff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
 }
 
 h1, h2, h3 {
-  font-family: 'HeadingFont';
+    font-family: 'Bangers', cursive;
+    color: #006699;
 }
+
