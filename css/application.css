@@ -1,43 +1,46 @@
-/* Import custom fonts */
-@font-face {
-    font-family: 'HeadingFont';
-    src: url('fonts/HeadingFont.ttf');
-}
-
-@font-face {
-    font-family: 'BodyFont';
-    src: url('fonts/BodyFont.ttf');
-}
-
-/* General Styles */
 body {
-    font-family: 'BodyFont', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: #e6f9ff;
     color: #333;
     padding: 20px;
     text-align: center;
 }
 
-/* Headings */
-h1, h2 {
-    font-family: 'HeadingFont', serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bangers', cursive;
     color: #006699;
 }
 
-/* Images */
 img {
     margin: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
 }
 
-/* Table Styling */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-column {
+    width: 300px;
+    text-align: center;
+}
+
+.image-column img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 table {
     margin: 20px auto;
     border-collapse: collapse;
     width: 60%;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -50,7 +53,6 @@ th {
     color: white;
 }
 
-/* List Styling */
 ul {
     text-align: left;
     display: inline-block;
