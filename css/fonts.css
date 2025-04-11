@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'HeadingFont';
+  src: url('fonts/YourHeadingFont.ttf');
+}
+
+@font-face {
+  font-family: 'BodyFont';
+  src: url('fonts/YourBodyFont.ttf');
+}
+
+body {
+  font-family: 'BodyFont';
+}
+
+h1, h2, h3 {
+  font-family: 'HeadingFont';
+}
