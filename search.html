@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Healthy Recipe Search</title>
+    <title>Travel Destination Search</title>
     <link rel="stylesheet" href="css/main.css">
     <style>
         form {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             background: #ffffff;
             padding: 20px;
@@ -14,20 +14,31 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        label {
+        label, legend {
             display: block;
             margin-top: 10px;
             font-weight: bold;
         }
 
-        input[type="text"], select {
+        input[type="text"], select, textarea {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
         }
 
+        select[multiple] {
+            height: auto;
+        }
+
         .checkbox-group {
             margin-top: 10px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
         }
 
         button {
@@ -47,30 +58,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>Healthy Recipe Advanced Search</h1>
-        <form action="https://www.google.com/search" method="GET" target="_blank">
-            <!-- Search Terms -->
-            <label for="q">Search for recipes:</label>
-            <input type="text" name="q" id="q" placeholder="e.g. vegan tacos, gluten-free cookies" required>
+        <h1>Advanced Travel Destination Search</h1>
+
+        <form action="https://www.google.com/search" method="GET" target="_blank" onsubmit="combineInputs()">
+            <!-- Base Search Term -->
+            <label for="q">What are you looking for?</label>
+            <input type="text" name="q" id="q" placeholder="e.g. hiking, museums, resorts" required>
 
             <!-- Site restriction -->
-            <input type="hidden" name="q" value="site:allrecipes.com">
+            <input type="hidden" id="site" value="site:tripadvisor.com">
 
-            <!-- File type -->
-            <label for="filetype">File Type:</label>
-            <select name="q" id="filetype" onchange="appendFileType(this)">
+            <!-- Region Dropdown -->
+            <label for="region">Select a region:</label>
+            <select id="region">
                 <option value="">Any</option>
-                <option value="filetype:pdf">PDF</option>
-                <option value="filetype:docx">DOCX</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
             </select>
 
             <!-- intitle checkbox -->
             <div class="checkbox-group">
                 <label>
-                    <input type="checkbox" name="intitle" value="1" onclick="toggleIntitle(this)">
-                    Only show recipes with keywords in the title
+                    <input type="checkbox" id="intitle">
+                    Only show pages with keywords in the title
                 </label>
             </div>
+
+            <!-- Trip Type (Radio Buttons) -->
+            <fieldset>
+                <legend>Trip Type:</legend>
+                <label><input type="radio" name="tripType" value="adventure"> Adventure</label>
+                <label><input type="radio" name="tripType" value="relaxation"> Relaxation</label>
+                <label><input type="radio" name="tripType" value="culture"> Culture</label>
+                <label><input type="radio" name="tripType" value="family"> Family</label>
+            </fieldset>
+
+            <!-- Activities (List Box) -->
+            <label for="activities">Choose preferred activities:</label>
+            <select id="activities" multiple>
+                <option value="hiking">Hiking</option>
+                <option value="beaches">Beaches</option>
+                <option value="local food">Local Food</option>
+                <option value="shopping">Shopping</option>
+                <option value="wildlife">Wildlife</option>
+            </select>
 
             <!-- Submit button -->
             <button type="submit">Search Google</button>
@@ -78,20 +113,38 @@
     </div>
 
     <script>
-        function toggleIntitle(checkbox) {
-            const input = document.getElementById("q");
-            if (checkbox.checked) {
-                input.value = "intitle:" + input.value;
-            } else {
-                input.value = input.value.replace("intitle:", "");
-            }
-        }
+        function combineInputs() {
+            const base = document.getElementById("q").value;
+            const region = document.getElementById("region").value;
+            const intitle = document.getElementById("intitle").checked;
+            const site = document.getElementById("site").value;
 
-        function appendFileType(select) {
-            const input = document.getElementById("q");
-            const type = select.value;
-            input.value = input.value.replace(/filetype:\w+/, ''); // Remove existing
-            if (type) input.value += " " + type;
+            const tripType = document.querySelector('input[name="tripType"]:checked');
+            const activities = Array.from(document.getElementById("activities").selectedOptions).map(option => option.value);
+
+            let finalQuery = "";
+
+            // Add intitle
+            if (intitle) {
+                finalQuery += `intitle:${base} `;
+            } else {
+                finalQuery += `${base} `;
+            }
+
+            // Add region
+            if (region) finalQuery += `${region} `;
+
+            // Add trip type
+            if (tripType) finalQuery += `${tripType.value} `;
+
+            // Add activities
+            if (activities.length > 0) finalQuery += activities.join(" ") + " ";
+
+            // Add site restriction
+            finalQuery += site;
+
+            // Apply to input field before submit
+            document.getElementById("q").value = finalQuery.trim();
         }
     </script>
 </body>
