@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Recipe Search</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #006699;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Healthy Recipe Advanced Search</h1>
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+            <!-- Search Terms -->
+            <label for="q">Search for recipes:</label>
+            <input type="text" name="q" id="q" placeholder="e.g. vegan tacos, gluten-free cookies" required>
+
+            <!-- Site restriction -->
+            <input type="hidden" name="q" value="site:allrecipes.com">
+
+            <!-- File type -->
+            <label for="filetype">File Type:</label>
+            <select name="q" id="filetype" onchange="appendFileType(this)">
+                <option value="">Any</option>
+                <option value="filetype:pdf">PDF</option>
+                <option value="filetype:docx">DOCX</option>
+            </select>
+
+            <!-- intitle checkbox -->
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="intitle" value="1" onclick="toggleIntitle(this)">
+                    Only show recipes with keywords in the title
+                </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit">Search Google</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleIntitle(checkbox) {
+            const input = document.getElementById("q");
+            if (checkbox.checked) {
+                input.value = "intitle:" + input.value;
+            } else {
+                input.value = input.value.replace("intitle:", "");
+            }
+        }
+
+        function appendFileType(select) {
+            const input = document.getElementById("q");
+            const type = select.value;
+            input.value = input.value.replace(/filetype:\w+/, ''); // Remove existing
+            if (type) input.value += " " + type;
+        }
+    </script>
+</body>
+</html>
