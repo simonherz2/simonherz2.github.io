@@ -8,23 +8,10 @@ body {
 }
 
 header {
-    background-color: #004080;
+    background-color: #6699cc;
     color: white;
     text-align: center;
     padding: 1em 0;
-}
-
-header a {
-    color: white;
-    text-decoration: underline;
-}
-
-header a:visited {
-    color: white;
-}
-
-header a:hover {
-    color: #cce0ff; 
 }
 
 nav {
