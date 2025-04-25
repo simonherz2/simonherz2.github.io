@@ -14,6 +14,19 @@ header {
     padding: 1em 0;
 }
 
+header a {
+    color: white;
+    text-decoration: underline;
+}
+
+header a:visited {
+    color: white;
+}
+
+header a:hover {
+    color: #cce0ff; 
+}
+
 nav {
     background-color: #0066cc;
     text-align: center;
