@@ -36,9 +36,11 @@ nav a {
 .hero-image {
   display: block;
   margin: 1rem auto;
-  max-width: 100%;
-  width: 90%;
+  width: auto;
+  max-width: 90%;
   height: auto;
+  max-height: 500px;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
