@@ -1,4 +1,4 @@
- /* Reset & base styles */
+/* Reset & base styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -157,22 +157,19 @@ footer {
 
 .ticket-images {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
 .ticket-images img {
-  width: 33.33%;
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  object-fit: cover;
-  border-radius: 0;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  padding: 0;
+  object-fit: cover;
 }
 
 /* Contact Page */
@@ -238,10 +235,6 @@ footer {
   .ticket-images {
     flex-direction: column;
     align-items: center;
-  }
-
-  .ticket-images img {
-    width: 100%;
   }
 
   .contact-buttons {
