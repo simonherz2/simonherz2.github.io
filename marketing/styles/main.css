@@ -33,6 +33,16 @@ nav a {
   text-align: center;
 }
 
+.hero-image {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .cta-button {
   background-color: #cc0000;
   color: white;
