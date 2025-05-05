@@ -1,4 +1,8 @@
 /* Reset & base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -27,32 +31,20 @@ nav a {
 }
 
 /* Hero section - index.html */
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.hero {
+  background-color: #eeeeee;
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
-  min-height: 100vh;
 }
 
-.hero-section h2 {
+.hero h2 {
   font-size: 2rem;
   color: #cc0000;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 800px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.hero-text p {
   margin-bottom: 1rem;
-  text-align: center;
+}
+
+.hero p {
+  margin-bottom: 1rem;
 }
 
 .hero-image {
@@ -67,13 +59,11 @@ nav a {
 
 .cta-text {
   font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  margin: 1rem 0 0.5rem;
   font-size: 1.1rem;
-  text-align: center;
 }
 
+/* CTA Button */
 .cta-button {
   background-color: #cc0000;
   color: white;
@@ -85,7 +75,6 @@ nav a {
   transition: background-color 0.3s ease;
   display: inline-block;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .cta-button:hover {
@@ -186,10 +175,25 @@ footer {
 
 .contact-buttons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.contact-buttons a {
+  background-color: #cc0000;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.contact-buttons a:hover {
+  background-color: #990000;
 }
 
 .directory {
@@ -219,7 +223,7 @@ footer {
     margin: 0.5rem 0;
   }
 
-  .hero-section {
+  .hero {
     padding: 1rem;
   }
 
@@ -235,6 +239,10 @@ footer {
   .ticket-images {
     flex-direction: column;
     align-items: center;
+  }
+
+  .ticket-images img {
+    width: 100%;
   }
 
   .contact-buttons {
