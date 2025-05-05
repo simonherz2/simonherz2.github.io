@@ -47,11 +47,17 @@ nav a {
 .cta-button {
   background-color: #cc0000;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
   display: inline-block;
-  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #990000;
 }
 
 /* Footer */
@@ -101,6 +107,39 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* Tickets Page */
+.tickets-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.tickets-section h2 {
+  font-size: 1.8rem;
+  color: #cc0000;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+.ticket-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.ticket-images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
   nav a {
@@ -115,6 +154,17 @@ footer {
   .about-layout {
     flex-direction: column;
   }
+
+  .about-image,
+  .about-text {
+    max-width: 100%;
+  }
+
+  .ticket-images {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
   .about-image,
   .about-text {
