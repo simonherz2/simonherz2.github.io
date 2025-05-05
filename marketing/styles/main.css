@@ -37,12 +37,13 @@ nav a {
   display: block;
   margin: 1rem auto;
   width: 100%;
-  max-width: 600px; 
+  max-width: 600px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* CTA Button */
 .cta-button {
   background-color: #cc0000;
   color: white;
@@ -51,21 +52,6 @@ nav a {
   font-weight: bold;
   display: inline-block;
   margin-top: 1rem;
-}
-
-/* About section */
-.about-content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  text-align: left;
-  line-height: 1.6;
-}
-
-.about-content h2 {
-  text-align: center;
-  color: #cc0000;
-  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -77,6 +63,44 @@ footer {
   margin-top: 2rem;
 }
 
+/* About Page: Split Layout */
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 250px;
+  max-width: 33%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  color: #cc0000;
+  margin-top: 0;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
   nav a {
@@ -86,5 +110,14 @@ footer {
 
   .hero {
     padding: 1rem;
+  }
+
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-image,
+  .about-text {
+    max-width: 100%;
   }
 }
