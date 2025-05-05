@@ -30,20 +30,27 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero section - index.html */
-.hero {
+/* Hero Section - Index Page */
+.hero-section {
   background-color: #eeeeee;
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
-.hero h2 {
+.hero-section h2 {
   font-size: 2rem;
   color: #cc0000;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.hero p {
+.hero-text {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hero-text p {
   margin-bottom: 1rem;
 }
 
@@ -57,13 +64,16 @@ nav a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* CTA */
 .cta-text {
   font-weight: bold;
-  margin: 1rem 0 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
   font-size: 1.1rem;
+  text-align: center;
 }
 
-/* CTA Button */
 .cta-button {
   background-color: #cc0000;
   color: white;
@@ -75,6 +85,7 @@ nav a {
   transition: background-color 0.3s ease;
   display: inline-block;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .cta-button:hover {
@@ -175,8 +186,8 @@ footer {
 
 .contact-buttons {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -223,8 +234,17 @@ footer {
     margin: 0.5rem 0;
   }
 
-  .hero {
+  .hero-section {
     padding: 1rem;
+  }
+
+  .hero-text,
+  .cta-text {
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
   }
 
   .about-layout {
